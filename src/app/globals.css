@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --christos-bg: #ded0b6;
+    --christos-dark: #2d2115;
+    --christos-light: #fef9e8;
+    --christos-green: #487413;
+    --christos-gold: #c9a538;
+    --christos-overlay: rgba(0, 0, 0, 0.52);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  .christos-page {
+    background: linear-gradient(180deg, #ded0b6 0%, #d4c5a9 35%, #ded0b6 100%);
+    color: var(--christos-dark);
+    min-height: 100vh;
+  }
+
+  .christos-shell {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .christos-hero {
+    min-height: 75vh;
+    padding-bottom: 3rem;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background:
+      linear-gradient(var(--christos-overlay), var(--christos-overlay)),
+      radial-gradient(circle at 20% 10%, rgba(72, 116, 19, 0.35), rgba(72, 116, 19, 0)),
+      linear-gradient(115deg, #5d6c47, #3a4a2b 40%, #293321);
+  }
+
+  .christos-nav-wrap {
+    padding: 1rem 0;
+  }
+
+  .christos-nav {
+    backdrop-filter: blur(6px);
+    background: rgba(72, 116, 19, 0.45);
+    border: 1px solid rgba(254, 249, 232, 0.2);
+    border-radius: 999px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0.65rem 1rem;
+  }
+
+  .christos-nav-link {
+    border-bottom: 2px solid transparent;
+    color: var(--christos-light);
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.86rem;
+    letter-spacing: 0.01em;
+    padding-bottom: 0.125rem;
+    transition: border-color 160ms ease, opacity 160ms ease;
+  }
+
+  .christos-nav-link:hover {
+    border-color: var(--christos-light);
+    opacity: 0.9;
+  }
+
+  .christos-hero-content {
+    align-items: center;
+    display: grid;
+    min-height: calc(75vh - 80px);
+    padding-top: 1rem;
+  }
+
+  .christos-glass {
+    backdrop-filter: blur(14px);
+    background: rgba(72, 116, 19, 0.18);
+    border: 1px solid rgba(254, 249, 232, 0.34);
+    border-radius: 2rem;
+    color: var(--christos-light);
+    max-width: 740px;
+    padding: clamp(1.4rem, 4vw, 2.6rem);
+  }
+
+  .christos-kicker {
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .christos-display {
+    color: var(--christos-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .christos-body {
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+
+  .christos-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .christos-btn {
+    border-radius: 999px;
+    display: inline-block;
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.72rem 1.4rem;
+    transition: transform 160ms ease, filter 160ms ease;
+  }
+
+  .christos-btn:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+
+  .christos-btn-light {
+    background: var(--christos-light);
+    color: var(--christos-dark);
+  }
+
+  .christos-btn-green {
+    background: var(--christos-green);
+    color: var(--christos-light);
+  }
+
+  .christos-btn-gold {
+    background: var(--christos-gold);
+    color: var(--christos-dark);
+  }
+
+  .christos-section {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  .christos-panel {
+    background: rgba(45, 33, 21, 0.84);
+    border: 1px solid rgba(201, 165, 56, 0.45);
+    border-radius: 1rem;
+    color: var(--christos-light);
+    margin-bottom: 1.25rem;
+    padding: clamp(1.2rem, 2.6vw, 2rem);
+  }
+
+  .christos-title {
+    color: var(--christos-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .christos-element-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0;
+  }
+
+  .christos-element-card {
+    backdrop-filter: blur(8px);
+    background: rgba(254, 249, 232, 0.13);
+    border: 1px solid rgba(45, 33, 21, 0.2);
+    border-radius: 1rem;
+    padding: 1.1rem;
+  }
+
+  .christos-element-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    line-height: 1.1;
+  }
+
+  .christos-element-trait {
+    color: #453f34;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+  }
+
+  .christos-element-copy {
+    color: #2f2a22;
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-top: 0.7rem;
+  }
+
+  .christos-support {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+      linear-gradient(95deg, #313124, #4a4b32 52%, #343221);
+    color: var(--christos-light);
+    padding: 4rem 0;
+  }
+
+  .christos-support-card {
+    text-align: center;
+  }
+
+  .christos-support-links {
+    color: #ddcfaa;
+    font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    margin-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .christos-element-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1180px) {
+    .christos-element-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
